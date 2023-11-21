@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+img {
+  max-height: 100%;
+}
+h1 {
+  @apply text-base md:text-xl capitalize;
+}
+h3 {
+  @apply text-sm md:text-base text-primary capitalize;
+}
+table.basic {
+  @apply w-full bg-white rounded-sm shadow-md;
+}
+table.basic thead tr td,
+table.basic thead tr th {
+  @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
+}
+table.basic tr td {
+  @apply px-4 py-1;
+}
+table.basic a {
+  @apply px-4 py-1 text-sm mx-1 rounded-sm inline-flex items-center gap-1;
+}
+.btn-red, .btn-default  {
+  @apply px-4 py-1 rounded-md shadow-sm;
+}
+.btn-red {
+  @apply bg-red-200 text-red-700 px-4 py-1 rounded-sm;
+}
+.btn-default {
+  @apply bg-gray-600 text-white px-4 py-1 rounded-sm;
+}
+.btn-primary {
+  @apply bg-primary text-black text-sm md:text-base px-2 md:px-3 py-2 rounded font-medium;
+}
+.btn-secondary {
+  @apply bg-secondary text-black text-sm px-4 py-2 rounded-lg drop-shadow-md font-medium;
+}
+.btn-primaryVariant {
+  @apply bg-primary text-black text-xs px-2 rounded-full drop-shadow-md font-medium;
+}
+.btn-primary:hover {
+  @apply outline outline-offset-2 bg-white outline-primary;
+}
+.btn-secondary:hover {
+  @apply outline outline-offset-2 bg-white outline-secondary;
+}
+input, textarea, select, option {
+  @apply w-full bg-white text-black text-xs h-10 rounded-xl px-2;
+}
+input:focus, textarea:focus, select:focus {
+  @apply border-blue-900;
+}
+select, option {
+  @apply text-surfaceBG text-sm;
+}
+label {
+  @apply text-sm;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
+/* * {
+  border: 1px white solid;
+} */
+
+
+
