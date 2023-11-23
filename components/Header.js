@@ -10,7 +10,7 @@ export default function Header() {
       <Navbar />
       <div className="text-3xl md:text-6xl">
         <h2>
-          Hi, <span className="text-primary">I'm</span>
+          Hi, <span className="text-primary">I&#39;m</span>
         </h2>
         <h2 className="leading-3 md:leading-7">
           <span className="text-primary">Bryan</span>Somto

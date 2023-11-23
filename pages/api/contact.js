@@ -4,7 +4,7 @@ const USER = process.env.HOST_EMAIL;
 const PASSWORD = process.env.HOST_EMAIL_SECRET;
 const RECIPIENT = process.env.RECIPIENT_EMAIL;
 
-export default function (req, res) {
+export default function Mailer(req, res) {
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
     port: 465,
