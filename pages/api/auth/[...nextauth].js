@@ -14,7 +14,7 @@ export const authOptions = {
     // OAuth authentication providers...
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET || process.env.NEXTAUTH_SECRET,
+      clientSecret: process.env.NEXTAUTH_SECRET || process.env.GOOGLE_SECRET,
     }),
   ],
   adapter: MongoDBAdapter(clientPromise),
