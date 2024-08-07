@@ -1,8 +1,5 @@
 import { HomeBG, Logo } from "@/components/assets";
 import ButtonLink from "@/components/ButtonLink";
-import Center from "@/components/Center";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -25,8 +22,8 @@ export default function Welcome() {
       <Image src={HomeBG} alt="logo" className="" />
       <div className="flex flex-col gap-6 sm:gap-12 sm:-ml-32 lg:-ml-96 w-11/12 sm:w-4/5">
         <p className="text-3xl sm:text-4xl lg:text-5xl text-center sm:text-left">
-          Hello there! I'm <span className="text-primary">Bryan Somto</span>,
-          let's get
+          Hello there! I&#39;m <span className="text-primary">Bryan Somto</span>
+          , let&#39;s get
           <span className="text-primary"> Teching</span>.
         </p>
         <div className="">

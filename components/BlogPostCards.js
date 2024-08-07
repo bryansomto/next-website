@@ -35,7 +35,6 @@ const ImgBox = styled.div`
 
 export default function BlogPostCards(...props) {
   const BlogPostProps = Object.values(props[0]);
-  console.log(BlogPostProps);
   return (
     <CardWrapper>
       {BlogPostProps[0]?.length > 0 &&

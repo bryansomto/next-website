@@ -43,7 +43,7 @@ export default function BlogPage({ blogPosts }) {
       <Center>
         <ColWrapper>
           <WhiteBox>
-            <Image images={blogPosts.images} />
+            <Image src={blogPosts.images} alt="article cover" />
           </WhiteBox>
           <div className="space-y-4"></div>
         </ColWrapper>
