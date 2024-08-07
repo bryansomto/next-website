@@ -3,17 +3,17 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Designs(children) {
-  const [designs, setDesigns] = useState([]);
+export default function BlogPosts(children) {
+  const [blogPosts, setBlogPosts] = useState([]);
   useEffect(() => {
-    axios.get("/api/designs").then((response) => {
-      setDesigns(response.data);
+    axios.get("/api/blogPosts").then((response) => {
+      setBlogPosts(response.data);
     });
   }, []);
   return (
     <Layout>
-      <Link className="btn-primary" href={"/admin/designs/new"}>
-        Add new designs
+      <Link className="btn-primary" href={"/admin/blogPosts/new"}>
+        Add new blogposts
       </Link>
       <table className="basic mt-2">
         <thead>
@@ -23,13 +23,13 @@ export default function Designs(children) {
           </tr>
         </thead>
         <tbody>
-          {designs.map((design) => (
-            <tr key={design._id}>
-              <td className="text-surfaceBG">{design.title}</td>
+          {blogPosts.map((blogPost) => (
+            <tr key={blogPost._id}>
+              <td className="text-surfaceBG">{blogPost.title}</td>
               <td>
                 <Link
                   className="btn-default"
-                  href={`/admin/designs/edit/${design._id}`}
+                  href={`/admin/blogPosts/edit/${blogPost._id}`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export default function Designs(children) {
                 </Link>
                 <Link
                   className="btn-red"
-                  href={`/admin/designs/delete/${design._id}`}
+                  href={`/admin/blogPosts/delete/${blogPost._id}`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

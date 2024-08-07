@@ -13,9 +13,9 @@ export default function Footer() {
   const router = useRouter();
   const { pathname } = router;
   return (
-    <footer>
-      <nav className="space-y-6 w-fit">
-        <div className="pt-10">
+    <footer className="px-3 sm:flex sm:flex-col sm:justify-center sm:items-center shadow-md bg-black text-white">
+      <nav className="space-y-6 w-full sm:flex sm:justify-center sm:space-x-14 lg:space-x-28">
+        <div className="pt-10 sm:pt-4">
           <Image src={Logo} alt="logo" className="w-14 h-14 lg:w-20 lg:h-20" />
         </div>
         <div className="space-y-1">
@@ -30,9 +30,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <div className="">
-          <Form />
-        </div>
+        <Form />
         <div className="flex flex-col space-y-1">
           <h3>Connect with me</h3>
           <div className="flex flex-row text-xs md:text-sm space-x-2">
@@ -51,7 +49,7 @@ export default function Footer() {
         </div>
       </nav>
       <div className="font-head flex flex-row justify-center py-4 font-thin">
-        <small>bryansomto © 2023</small>
+        <small>bryansomto © 2024</small>
       </div>
     </footer>
   );

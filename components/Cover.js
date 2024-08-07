@@ -4,18 +4,19 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  margin: 0 auto;
-  /* padding: 0 20px; */
+  align-items: center;
+  text-align: center;
+  background-color: rgba(3, 131, 49, 0.3);
+  background-blend-mode: multiply;
+  padding: 30px 0;
   @media (min-width: 768px) {
-    max-width: 80%;
-    padding: 0 20px;
+    padding: 70px 0;
   }
   @media (min-width: 1024px) {
-    max-width: 60%;
-    padding: 0 20px;
+    padding: 100px 0;
   }
 `;
 
-export default function Center({ children }) {
+export default function Cover({ children }) {
   return <StyledDiv>{children}</StyledDiv>;
 }

@@ -7,10 +7,10 @@ import {
   whatsappLogo,
 } from "../../components/assets";
 
-export const inactiveNavLink = "capitalize hover:text-gray-400";
-export const activeNavLink = `${inactiveNavLink} text-primary`;
+export const inactiveNavLink = "capitalize hover:text-gray-200";
+export const activeNavLink = `${inactiveNavLink} text-primary underline`;
 export const inactiveLink =
-  "flex text-sm md:text-base hover:text-gray-400 ml-2 capitalize";
+  "flex text-sm md:text-base hover:text-gray-600 ml-2 capitalize";
 export const activeLink = `${inactiveLink} bg-highlight text-gray-400`;
 
 export const NavbarLinks = [
@@ -53,7 +53,7 @@ export const SocialLinks = [
     icon: whatsappLogo,
     path: "https://wa.me/2348168038695",
     text: "connect with me on whatsapp",
-    color: "bg-primary",
+    color: "bg-bg2",
   },
   // {
   //   icon: mailLogo,
@@ -64,12 +64,12 @@ export const SocialLinks = [
     icon: twitterLogo,
     path: "twitter.com/bryansomto",
     text: "connect with me on twitter",
-    color: "bg-secondary",
+    color: "bg-bg2",
   },
   {
     icon: linkedInLogo,
     path: "https://www.linkedin.com/in/bryansomto",
     text: "connect with me on linkedIn",
-    color: "bg-tertiary",
+    color: "bg-bg2",
   },
 ];

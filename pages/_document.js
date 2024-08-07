@@ -10,7 +10,7 @@ export default function Document() {
         crossOrigin="true"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400&family=Poppins:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Khand:wght@200;300;400;500&family=Poppins:wght@200;300;400;500;700&display=swap"
         rel="stylesheet"
       />
       <Head />

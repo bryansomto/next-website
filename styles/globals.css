@@ -6,10 +6,13 @@ img {
   max-height: 100%;
 }
 h1 {
-  @apply text-base md:text-xl capitalize;
+  @apply text-xl sm:text-4xl lg:text-6xl capitalize;
+}
+h2 {
+  @apply text-xl sm:text-2xl lg:text-4xl capitalize;
 }
 h3 {
-  @apply text-sm md:text-base text-primary capitalize;
+  @apply text-base lg:text-xl text-primary capitalize;
 }
 table.basic {
   @apply w-full bg-white rounded-sm shadow-md;
@@ -34,19 +37,19 @@ table.basic a {
   @apply bg-gray-600 text-white px-4 py-1 rounded-sm;
 }
 .btn-primary {
-  @apply bg-primary text-black text-sm md:text-base px-2 md:px-3 py-2 rounded font-medium;
+  @apply bg-bg1 text-black text-sm md:text-base px-2 md:px-3 py-2 rounded font-medium;
 }
 .btn-secondary {
-  @apply bg-secondary text-black text-sm px-4 py-2 rounded-lg drop-shadow-md font-medium;
+  @apply bg-bg2 text-black text-sm px-4 py-2 rounded-lg drop-shadow-md font-medium;
 }
 .btn-primaryVariant {
-  @apply bg-primary text-black text-xs px-2 rounded-full drop-shadow-md font-medium;
+  @apply bg-bg1 text-black text-xs px-2 rounded-full drop-shadow-md font-medium;
 }
 .btn-primary:hover {
-  @apply outline outline-offset-2 bg-white outline-primary;
+  @apply outline outline-offset-2 bg-white outline-button;
 }
 .btn-secondary:hover {
-  @apply outline outline-offset-2 bg-white outline-secondary;
+  @apply outline outline-offset-2 bg-white outline-bg2;
 }
 input, textarea, select, option {
   @apply w-full bg-white text-black text-xs h-10 rounded-xl px-2;
@@ -55,7 +58,7 @@ input:focus, textarea:focus, select:focus {
   @apply border-blue-900;
 }
 select, option {
-  @apply text-surfaceBG text-sm;
+  @apply text-secondary text-sm;
 }
 label {
   @apply text-sm;
@@ -63,9 +66,9 @@ label {
 
 
 
-/* * {
-  border: 1px white solid;
-} */
+* {
+  /* border: 1px rgb(3, 3, 3) solid; */
+}
 
 
 

@@ -70,13 +70,11 @@ function MessageForm({ swal, handleToggle }) {
   };
 
   return (
-    <div id="messageMe" className="font-body">
-      <p className="text-sm md:text-base text-primary capitalize mb-2">
-        Send me a message
-      </p>
+    <div id="messageMe" className="font-body sm:w-2/5 lg:w-1/4">
+      <h3 className="mb-2">Send me a message</h3>
 
-      <div className="space-y-.5">
-        <div className="space-y-2">
+      <div className="space-y-.5 sm:space-y-2 sm:flex sm:flex-col">
+        <div className="space-y-2 sm:flex sm:flex-col sm:justify-center sm:items-center">
           <input
             className="input"
             name="name"
@@ -112,7 +110,9 @@ function MessageForm({ swal, handleToggle }) {
         </div>
         <div className="">
           <Button
-            secondary="true"
+            button="true"
+            outline="true"
+            small="true"
             onClick={(e) => {
               handleSubmit(e);
             }}

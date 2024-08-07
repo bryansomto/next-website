@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Spinner from "./Spinner";
 import { ReactSortable } from "react-sortablejs";
 
-export default function DesignForm({
+export default function BlogPostForm({
   _id,
   title: existingTitle,
   description: existingDescription,
@@ -15,13 +15,13 @@ export default function DesignForm({
 }) {
   const [title, setTitle] = useState(existingTitle || "");
   const [category, setCategory] = useState(assignedCategory || "");
-  const [designProperties, setDesignProperties] = useState(
+  const [blogPostProperties, setBlogPostProperties] = useState(
     assignedProperties || {}
   );
   const [description, setDescription] = useState(existingDescription || "");
   const [link, setLink] = useState(existingLink || "");
   const [images, setImages] = useState(existingImages || []);
-  const [goToDesigns, setGoToDesigns] = useState(false);
+  const [goToBlogPosts, setGoToBlogPosts] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [categories, setCategories] = useState([]);
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function DesignForm({
     });
   }, []);
 
-  async function saveDesign(ev) {
+  async function saveBlogPost(ev) {
     ev.preventDefault();
     const data = {
       title,
@@ -39,20 +39,20 @@ export default function DesignForm({
       link,
       images,
       category,
-      properties: designProperties,
+      properties: blogPostProperties,
     };
     if (_id) {
       //update
-      await axios.put("/api/designs", { ...data, _id });
+      await axios.put("/api/blogPosts", { ...data, _id });
     } else {
       //create
-      await axios.post("/api/designs", data);
+      await axios.post("/api/blogPosts", data);
     }
-    setGoToDesigns(true);
+    setGoToBlogPosts(true);
   }
 
-  if (goToDesigns) {
-    router.push("/admin/designs");
+  if (goToBlogPosts) {
+    router.push("/admin/blogPosts");
   }
 
   async function uploadImages(ev) {
@@ -75,11 +75,11 @@ export default function DesignForm({
     setImages(images);
   }
 
-  function setDesignProp(propName, value) {
-    setDesignProperties((prev) => {
-      const newDesignProps = { ...prev };
-      newDesignProps[propName] = value;
-      return newDesignProps;
+  function setBlogPostProp(propName, value) {
+    setBlogPostProperties((prev) => {
+      const newBlogPostProps = { ...prev };
+      newBlogPostProps[propName] = value;
+      return newBlogPostProps;
     });
   }
 
@@ -97,12 +97,12 @@ export default function DesignForm({
   }
 
   return (
-    <form onSubmit={saveDesign} className="space-y-3">
+    <form onSubmit={saveBlogPost} className="space-y-3">
       <div>
-        <label>Design name</label>
+        <label>Post title</label>
         <input
           type="text"
-          placeholder="design name"
+          placeholder="Blog post title"
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
         />
@@ -125,11 +125,11 @@ export default function DesignForm({
         {propertiesToFill.length > 0 &&
           propertiesToFill.map((p) => (
             <div key={p._id}>
-              <label>{p.name[0].toUpperCase() + p.name.substring(1)}</label>
+              <label>{p.name[0]?.toUpperCase() + p.name.substring(1)}</label>
               <div>
                 <select
-                  value={designProperties[p.name]}
-                  onChange={(ev) => setDesignProp(p.name, ev.target.value)}
+                  value={blogPostProperties[p.name]}
+                  onChange={(ev) => setBlogPostProp(p.name, ev.target.value)}
                 >
                   {p.values.map((v) => (
                     <option key={v._id} value={v}>

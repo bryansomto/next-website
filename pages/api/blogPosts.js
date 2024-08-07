@@ -1,5 +1,5 @@
 import { mongooseConnect } from "@/lib/mongoose";
-import { Design } from "@/models/Design";
+import { BlogPost } from "@/models/BlogPost";
 import { isAdminRequest } from "./auth/[...nextauth]";
 
 export default async function handle(req, res) {
@@ -9,15 +9,15 @@ export default async function handle(req, res) {
 
   if (method === "GET") {
     if (req.query?.id) {
-      res.json(await Design.findOne({ _id: req.query.id }));
+      res.json(await BlogPost.findOne({ _id: req.query.id }));
     } else {
-      res.json(await Design.find());
+      res.json(await BlogPost.find());
     }
   }
 
   if (method === "POST") {
     const { title, description, link, images, category, properties } = req.body;
-    const DesignDoc = await Design.create({
+    const BlogPostDoc = await BlogPost.create({
       title,
       description,
       link,
@@ -25,13 +25,13 @@ export default async function handle(req, res) {
       category,
       properties,
     });
-    res.json(DesignDoc);
+    res.json(BlogPostDoc);
   }
 
   if (method === "PUT") {
     const { title, description, link, images, category, properties, _id } =
       req.body;
-    await Design.updateOne(
+    await BlogPost.updateOne(
       { _id },
       { title, description, link, images, category, properties }
     );
@@ -40,7 +40,7 @@ export default async function handle(req, res) {
 
   if (method === "DELETE") {
     if (req.query?.id) {
-      await Design.deleteOne({ _id: req.query?.id });
+      await BlogPost.deleteOne({ _id: req.query?.id });
       res.json(true);
     }
   }

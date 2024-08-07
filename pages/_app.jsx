@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { StyleSheetManager, createGlobalStyle } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 import { SessionProvider } from "next-auth/react"
-import { surfaceBG, surfaceBright} from "@/lib/colors";
+import { bgMain, primary, secondary } from "@/lib/colors";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -10,8 +10,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background-color: ${surfaceBG};
-        color: ${surfaceBright};
+        background-color: ${bgMain};
     }
 `;
 

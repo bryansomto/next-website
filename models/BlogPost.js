@@ -1,6 +1,6 @@
 const { Schema, model, models, default: mongoose } = require("mongoose");
 
-const DesignSchema = new Schema(
+const BlogPostSchema = new Schema(
   {
     title: { type: String, required: true },
     description: String,
@@ -14,4 +14,4 @@ const DesignSchema = new Schema(
   }
 );
 
-export const Design = models.Design || model("Design", DesignSchema);
+export const BlogPost = models.BlogPost || model("BlogPost", BlogPostSchema);
