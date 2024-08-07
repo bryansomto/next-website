@@ -38,10 +38,7 @@ export default function BlogPage({ blogPosts }) {
       <Navbar />
       <Cover>
         <Title>{blogPosts.title}</Title>
-        <p className="w-4/5 sm:w-3/5 lg:w-2/5">
-          Hello there this a test kjgaef jegflikejf kjewgfkef ikejgfkjewf
-          kjgefjew
-        </p>
+        <p className="w-4/5 sm:w-3/5 lg:w-2/5">{blogPosts.description}</p>
       </Cover>
       <Center>
         <ColWrapper>

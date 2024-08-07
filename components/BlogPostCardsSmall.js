@@ -49,7 +49,7 @@ export default function BlogPostCardsSmall(...props) {
               <p className="flex">{BlogPostProp.description}</p>
               <div className="flex">
                 <ButtonLink
-                  href={BlogPostProp.link || BlogPostProp.title}
+                  href={"/blog/" + BlogPostProp._id}
                   outline="true"
                   white="true"
                   link="true"
