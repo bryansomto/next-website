@@ -36,42 +36,10 @@ const Title = styled(Link)`
   text-decoration: none;
 `;
 
-const ProductInfoBox = styled.div`
+const BlogInfoBox = styled.div`
   margin-top: 5px;
   display: grid;
   gap: 2px;
-`;
-
-const Price = styled.div`
-  color: ${primary};
-  font-size: 1rem;
-  font-weight: 600;
-  @media screen and (min-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const WishlistButton = styled.button`
-  border: 0;
-  width: 40px !important;
-  height: 40px;
-  padding: 5px 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: transparent;
-  cursor: pointer;
-  ${(props) =>
-    props.wished
-      ? `
-    color:red;
-  `
-      : `
-    color:black;
-  `}
-  svg {
-    width: 16px;
-  }
 `;
 
 export default function ProductBox({ _id, title, description }) {
@@ -79,11 +47,11 @@ export default function ProductBox({ _id, title, description }) {
   return (
     <BlogWrapper>
       <WhiteBox href={url}></WhiteBox>
-      <ProductInfoBox>
+      <BlogInfoBox>
         <Title href={url} className="text-xs sm:text-sm lg:text-base">
           {title}
         </Title>
-      </ProductInfoBox>
+      </BlogInfoBox>
     </BlogWrapper>
   );
 }

@@ -27,10 +27,10 @@ export async function getServerSideProps() {
   await mongooseConnect();
   const blogPosts = await BlogPost.find(
     {
-      category: "66aa793e2dcb6df64a24e74e",
+      category: "66b510952c526e15f2c3144d",
     },
     null,
-    { sort: { _id: -1 }, limit: 4 }
+    { sort: { _id: -1 }, limit: 2 }
   );
   return {
     props: {

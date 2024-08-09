@@ -32,7 +32,7 @@ export default function Welcome() {
             transparent="true"
             outline="true"
             welcome="true"
-            size="true"
+            // size="true"
             className="w-fit"
           >
             Visit Blog

@@ -44,19 +44,12 @@ export default function BlogPostCardsSmall(...props) {
         BlogPostProps[0].map((BlogPostProp) => (
           <Card className="border border-primary" key={BlogPostProp._id}>
             <ImgBox images={BlogPostProp.images} />
-            <InfoBox className="py-2 px-3 sm:py-4 sm:px-6 md:px-12">
-              <h2 className="flex">{BlogPostProp.title}</h2>
-              <p className="flex">{BlogPostProp.description}</p>
-              <div className="flex">
-                <ButtonLink
-                  href={"/blog/" + BlogPostProp._id}
-                  outline="true"
-                  white="true"
-                  link="true"
-                >
-                  View Blog Post
+            <InfoBox className="py-2 sm:py-4">
+              <p className="flex">
+                <ButtonLink href={"/blog/" + BlogPostProp._id} link="true">
+                  {BlogPostProp.title}
                 </ButtonLink>
-              </div>
+              </p>
             </InfoBox>
           </Card>
         ))}

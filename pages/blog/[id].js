@@ -1,54 +1,76 @@
 import Center from "@/components/Center";
 import Cover from "@/components/Cover";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Title from "@/components/Title";
+import WebShare from "@/components/WebShare";
 import WhiteBox from "@/components/WhiteBox";
-import { primary } from "@/lib/colors";
+import { primary, secondary } from "@/lib/colors";
 import { mongooseConnect } from "@/lib/mongoose";
 import { BlogPost } from "@/models/BlogPost";
 import Image from "next/image";
 import styled from "styled-components";
 
 const ColWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 40px;
-  }
-  margin-top: 40px;
-`;
-
-const PriceRow = styled.div`
-  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+  padding: 60px 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  p {
+    line-height: 1.6em;
+    text-align: left;
+    font-size: 0.9em;
+    white-space: pre-line;
+  }
+  @media (min-width: 768px) {
+    padding: 120px 0;
+    p {
+      font-size: 1.1em;
+    }
+  }
+  @media (min-width: 1024px) {
+    padding: 180px 0;
+    p {
+      font-size: 1.2em;
+    }
+  }
 `;
 
-const Price = styled.span`
-  color: ${primary};
-  font-size: 1.7rem;
-  font-weight: 600;
+const TextBG = styled.div`
+  background-color: ${secondary};
 `;
 
 export default function BlogPage({ blogPosts }) {
   return (
     <>
       <Navbar />
-      <Cover>
-        <Title>{blogPosts.title}</Title>
-        <p className="w-4/5 sm:w-3/5 lg:w-2/5">{blogPosts.description}</p>
-      </Cover>
-      <Center>
-        <ColWrapper>
-          <WhiteBox>
-            <Image src={blogPosts.images} alt="article cover" />
-          </WhiteBox>
-          <div className="space-y-4"></div>
-        </ColWrapper>
-        {/* <Blog blogPosts={blogPosts} /> */}
-      </Center>
+      <Cover background={blogPosts.images[0]}></Cover>
+      <TextBG>
+        <Center>
+          <Title>{blogPosts.title}</Title>
+          <ColWrapper>
+            <div className="flex justify-center">
+              <iframe
+                className="px-2 sm:px-4 lg:px-6 w-full h-80 lg:w-4/5 lg:h-96"
+                src={blogPosts.link}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className="flex flex-col gap-6 px-3 sm:px-6 my-4">
+              <p>{blogPosts.description}</p>
+              <WebShare title={blogPosts.title} />
+            </div>
+          </ColWrapper>
+        </Center>
+      </TextBG>
+      <Footer />
     </>
   );
 }

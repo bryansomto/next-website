@@ -10,13 +10,14 @@ import { bg1, bg4, primary, secondary } from "@/lib/colors";
 const StyledNavbarWrapper = styled.header`
   background-color: #000000;
   border-bottom: 2px solid ${primary};
+  z-index: 1;
 `;
 
 const NavLogo = styled(Link)`
   /* color: #fff; */
   text-decoration: none;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const StyledNav = styled.nav`
@@ -24,7 +25,8 @@ const StyledNav = styled.nav`
     props.mobileNavActive
       ? `
   display: block;
-  background-color: #FFFFFF;
+  background-color: #000000;
+  z-index: 1;
   `
       : `
   display: none;
@@ -43,7 +45,7 @@ const StyledNav = styled.nav`
     position: static;
     padding: 0;
     background-color: transparent;
-    gap: 20px;
+    gap: 23px;
   }
 `;
 
@@ -68,6 +70,7 @@ const NavButton = styled.button`
   border: 0;
   cursor: pointer;
   position: relative;
+  z-index: 1;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -89,7 +92,7 @@ export default function Navbar() {
   const { pathname } = router;
   const [mobileNavActive, setMobileNavActive] = useState(false);
   return (
-    <StyledNavbarWrapper className="py-3 sm:py-4">
+    <StyledNavbarWrapper className="py-3 sm:py-4 stick">
       <Wrapper>
         <NavLogo href={"/"}>
           <Image

@@ -58,14 +58,14 @@ export const ButtonStyle = css`
     ${(props) =>
     props.welcome &&
     css`
-      font-size: 0.8rem;
+      font-size: 1rem;
       border: 1px solid ${primary};
       &:hover {
         outline: 2px solid ${primary};
         outline-offset: 2px;
       }
       @media (min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 10px 20px;
         border: 3px solid ${primary};
         &:hover {
@@ -74,18 +74,28 @@ export const ButtonStyle = css`
         }
       }
       @media (min-width: 1024px) {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         padding: 10px 60px;
       }
     `}
     ${(props) =>
     props.small &&
     css`
-      font-size: xx-small;
+      font-size: small;
       font-weight: 400;
       @media (min-width: 768px) {
         outline: 0px solid ${primary};
-        font-size: small;
+      }
+    `}
+    ${(props) =>
+    props.share &&
+    css`
+      float: right;
+      font-size: small;
+      border-radius: 50px;
+      @media (min-width: 1024px) {
+        font-size: medium;
+        outline: 0px solid ${primary};
       }
     `}
 `;

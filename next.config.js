@@ -10,6 +10,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ["bryan-next-website.s3.amazonaws.com"],
+  },
 };
 
 module.exports = nextConfig;

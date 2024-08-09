@@ -8,11 +8,11 @@ const StyledDiv = styled.div`
   /* padding: 0 20px; */
   @media (min-width: 768px) {
     max-width: 80%;
-    padding: 0 20px;
+    padding: 0 30px;
   }
   @media (min-width: 1024px) {
     max-width: 60%;
-    padding: 0 20px;
+    padding: 0 60px;
   }
 `;
 

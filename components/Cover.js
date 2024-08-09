@@ -1,14 +1,17 @@
+import { primary } from "@/lib/colors";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(3, 131, 49, 0.3);
+  position: absolute;
+  top: auto;
+  right: 0px;
+  left: 0px;
+  background: url(${(props) => props.background});
+  background-color: rgba(3, 131, 49, 0.9);
   background-blend-mode: multiply;
-  padding: 30px 0;
+  border-bottom: 4px solid ${primary};
+  opacity: 0.4;
+  padding: 40px 0;
   @media (min-width: 768px) {
     padding: 70px 0;
   }
@@ -17,6 +20,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-export default function Cover({ children }) {
-  return <StyledDiv>{children}</StyledDiv>;
+export default function Cover({ children, background }) {
+  return <StyledDiv background={background}>{children}</StyledDiv>;
 }
