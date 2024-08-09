@@ -54,7 +54,7 @@ export default function BlogPage({ blogPosts }) {
           <ColWrapper>
             <div className="flex justify-center">
               <iframe
-                className="px-2 sm:px-4 lg:px-6 w-full h-80 lg:w-4/5 lg:h-96"
+                className="px-2 sm:px-4 lg:px-6 w-full h-52 sm:h-80 lg:w-4/5 lg:h-96"
                 src={blogPosts.link}
                 title="YouTube video player"
                 frameborder="0"
