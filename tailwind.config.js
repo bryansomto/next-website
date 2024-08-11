@@ -11,7 +11,6 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        headerBg: "url('../components/assets/img/blueTech.jpg')",
         homeBg: "url('../components/assets/img/homeBG.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -29,6 +28,7 @@ module.exports = {
       },
       textColor: {
         primary: "#038C39", //text on bgMain
+        bg1: "#060725", //darkblue - text on light bg
         secondary: "#FFFFFF", //text on dark bg
       },
       width: {

@@ -22,7 +22,7 @@ export const ButtonStyle = css`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   svg {
     height: 16px;
     margin-right: 5px;
@@ -58,15 +58,15 @@ export const ButtonStyle = css`
     ${(props) =>
     props.welcome &&
     css`
-      font-size: 1rem;
+      font-size: 0.8rem;
       border: 1px solid ${primary};
       &:hover {
         outline: 2px solid ${primary};
         outline-offset: 2px;
       }
       @media (min-width: 768px) {
-        font-size: 1.1rem;
-        padding: 10px 20px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
         border: 3px solid ${primary};
         &:hover {
           outline: 3px solid ${primary};
@@ -74,16 +74,16 @@ export const ButtonStyle = css`
         }
       }
       @media (min-width: 1024px) {
-        font-size: 1.2rem;
-        padding: 10px 60px;
+        font-size: 1.1rem;
       }
     `}
     ${(props) =>
     props.small &&
     css`
-      font-size: small;
+      font-size: x-small;
       font-weight: 400;
       @media (min-width: 768px) {
+        font-size: small;
         outline: 0px solid ${primary};
       }
     `}
@@ -97,6 +97,11 @@ export const ButtonStyle = css`
         font-size: medium;
         outline: 0px solid ${primary};
       }
+    `}
+    ${(props) =>
+    props.link &&
+    css`
+      display: flex;
     `}
 `;
 

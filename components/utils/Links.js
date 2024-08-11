@@ -9,8 +9,11 @@ import {
 
 export const inactiveNavLink = "capitalize hover:text-gray-200";
 export const activeNavLink = `${inactiveNavLink} text-primary underline`;
+export const inactiveBlogNavLink =
+  "capitalize text-xs sm:text-sm hover:text-gray-200";
+export const activeBlogNavLink = `${inactiveBlogNavLink} underline`;
 export const inactiveLink =
-  "flex text-sm md:text-base hover:text-gray-600 ml-2 capitalize";
+  "flex text-xs md:text-sm hover:text-gray-600 ml-2 capitalize";
 export const activeLink = `${inactiveLink} bg-highlight text-gray-400`;
 
 export const NavbarLinks = [
@@ -25,6 +28,16 @@ export const NavbarLinks = [
   {
     text: "about",
     path: "/about",
+  },
+];
+export const BlogNavbarLinks = [
+  {
+    text: "all posts",
+    path: "/blog",
+  },
+  {
+    text: "categories",
+    path: "/blog/categories",
   },
 ];
 

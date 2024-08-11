@@ -9,10 +9,10 @@ h1 {
   @apply text-xl sm:text-4xl lg:text-6xl capitalize;
 }
 h2 {
-  @apply text-xl sm:text-2xl lg:text-4xl capitalize;
+  @apply text-lg sm:text-xl lg:text-2xl capitalize;
 }
 h3 {
-  @apply text-base lg:text-xl text-primary capitalize;
+  @apply text-sm text-primary capitalize;
 }
 table.basic {
   @apply w-full bg-white rounded-sm shadow-md;

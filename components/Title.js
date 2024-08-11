@@ -1,21 +1,16 @@
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-family: "Exo";
-  font-weight: 700;
-  font-size: 1.2em;
+  font-weight: 500;
+  font-size: 1.3em;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  top: 25px;
+  margin: 10px 8px;
   @media (min-width: 768px) {
-    top: 50px;
-    font-size: 2em;
+    margin: 0;
+    font-size: 1.5em;
   }
   @media (min-width: 1024px) {
-    top: 80px;
-    font-size: 2.8em;
+    font-size: 1.7em;
   }
 `;
 

@@ -5,7 +5,7 @@ import Button from "./Button";
 
 export default function WebShare({ title }) {
   const router = useRouter();
-  const { pathname, asPath } = router;
+  const { asPath } = router;
   return (
     <div>
       <RWebShare

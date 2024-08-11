@@ -5,7 +5,7 @@ import { isAdminRequest } from "./auth/[...nextauth]";
 export default async function handle(req, res) {
   const { method } = req;
   await mongooseConnect();
-  await isAdminRequest(req, res);
+  // await isAdminRequest(req, res);
 
   if (method === "GET") {
     if (req.query?.id) {
@@ -44,4 +44,29 @@ export default async function handle(req, res) {
       res.json(true);
     }
   }
+
+  // Search functionality
+
+  const { categories, sort, phrase, ...filters } = req.query;
+  let [sortField, sortOrder] = (sort || "_id-desc").split("-");
+  const blogPostsQuery = {};
+  if (categories) {
+    blogPostsQuery.category = categories.split(",");
+  }
+  if (phrase) {
+    blogPostsQuery["$or"] = [
+      { title: { $regex: phrase, $options: "i" } },
+      { description: { $regex: phrase, $options: "i" } },
+    ];
+  }
+  if (Object.keys(filters).length > 0) {
+    Object.keys(filters).forEach((filterName) => {
+      blogPostsQuery["properties." + filterName] = filters[filterName];
+    });
+  }
+  res.json(
+    await BlogPost.find(blogPostsQuery, null, {
+      sort: { [sortField]: sortOrder === "asc" ? 1 : -1 },
+    })
+  );
 }

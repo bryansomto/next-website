@@ -13,7 +13,7 @@ export default function Footer() {
   const router = useRouter();
   const { pathname } = router;
   return (
-    <footer className="px-3 sm:flex sm:flex-col sm:justify-center sm:items-center shadow-md bg-black text-white">
+    <footer className="mt-4 sm:mt-8 lg:mt-10 px-3 sm:flex sm:flex-col sm:justify-center sm:items-center shadow-md bg-black text-white">
       <nav className="space-y-6 w-full sm:flex sm:justify-center sm:space-x-14 lg:space-x-28">
         <div className="pt-10 sm:pt-4">
           <Image src={Logo} alt="logo" className="w-14 h-14 lg:w-20 lg:h-20" />
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
         <Form />
         <div className="flex flex-col space-y-1">
-          <h3>Connect with me</h3>
+          <h3>Follow & Subscribe</h3>
           <div className="flex flex-row text-xs md:text-sm space-x-2">
             {SocialLinks.map((i) => (
               <div className={i.color + " rounded-full"} key={i.path}>

@@ -2,7 +2,7 @@ import Center from "@/components/Center";
 import Cover from "@/components/Cover";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import { BlogNavbar, Navbar } from "@/components/Navbar";
 import Title from "@/components/Title";
 import WebShare from "@/components/WebShare";
 import WhiteBox from "@/components/WhiteBox";
@@ -47,15 +47,16 @@ export default function BlogPage({ blogPosts }) {
   return (
     <>
       <Navbar />
-      <Cover background={blogPosts.images[0]}></Cover>
+      <BlogNavbar />
+      <Cover background={blogPosts?.images[0]}></Cover>
       <TextBG>
         <Center>
-          <Title>{blogPosts.title}</Title>
+          <Title>{blogPosts?.title}</Title>
           <ColWrapper>
             <div className="flex justify-center">
               <iframe
                 className="px-2 sm:px-4 lg:px-6 w-full h-52 sm:h-80 lg:w-4/5 lg:h-96"
-                src={blogPosts.link}
+                src={blogPosts?.link}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
@@ -64,8 +65,8 @@ export default function BlogPage({ blogPosts }) {
               ></iframe>
             </div>
             <div className="flex flex-col gap-6 px-3 sm:px-6 my-4">
-              <p>{blogPosts.description}</p>
-              <WebShare title={blogPosts.title} />
+              <p>{blogPosts?.description}</p>
+              <WebShare title={blogPosts?.title} />
             </div>
           </ColWrapper>
         </Center>
@@ -78,6 +79,7 @@ export default function BlogPage({ blogPosts }) {
 export async function getServerSideProps(context) {
   await mongooseConnect();
   const { id } = context.query;
+  console.log(id);
   const blogPosts = await BlogPost.findById(id);
   return {
     props: {
