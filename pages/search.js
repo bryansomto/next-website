@@ -1,18 +1,11 @@
-import BlogPostCardsSmall from "@/components/BlogPostCardsSmall";
+import BlogPostBox from "@/components/BlogPostBox";
 import Center from "@/components/Center";
-import Input from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
 import Spinner from "@/components/Spinner";
 import axios from "axios";
 import { debounce } from "lodash";
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-
-const SearchInput = styled(Input)`
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 1.4rem;
-`;
 
 const InputWrapper = styled.div`
   position: sticky;
@@ -66,7 +59,8 @@ export default function SearchBlog() {
         {isLoading && <Spinner fullWidth={true} />}
         {!isLoading && blogPosts.length > 0 && (
           <div className="">
-            <BlogPostCardsSmall searchResult={blogPosts} />
+            <BlogPostBox {...blogPosts} />
+            {console.log(...blogPosts)}
           </div>
         )}
       </Center>

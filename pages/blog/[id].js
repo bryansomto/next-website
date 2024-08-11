@@ -1,15 +1,12 @@
 import Center from "@/components/Center";
 import Cover from "@/components/Cover";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { BlogNavbar, Navbar } from "@/components/Navbar";
 import Title from "@/components/Title";
 import WebShare from "@/components/WebShare";
-import WhiteBox from "@/components/WhiteBox";
-import { primary, secondary } from "@/lib/colors";
+import { secondary } from "@/lib/colors";
 import { mongooseConnect } from "@/lib/mongoose";
 import { BlogPost } from "@/models/BlogPost";
-import Image from "next/image";
 import styled from "styled-components";
 
 const ColWrapper = styled.div`
