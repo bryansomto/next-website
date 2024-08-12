@@ -1,6 +1,7 @@
 import BlogPostBox from "@/components/BlogPostBox";
+import BlogPostsGrid from "@/components/BlogPostsGrid";
 import Center from "@/components/Center";
-import { Navbar } from "@/components/Navbar";
+import { BlogNavbar, Navbar } from "@/components/Navbar";
 import Spinner from "@/components/Spinner";
 import axios from "axios";
 import { debounce } from "lodash";
@@ -30,7 +31,7 @@ export default function SearchBlog() {
   }, [phrase]);
   function searchBlogPosts(phrase) {
     axios
-      .get("/api/blogPosts?phrase=" + encodeURIComponent(phrase))
+      .get("/api/blogPostsClient?phrase=" + encodeURIComponent(phrase))
       .then((response) => {
         setBlogPosts(response.data);
         setIsLoading(false);
@@ -39,6 +40,7 @@ export default function SearchBlog() {
   return (
     <>
       <Navbar />
+      <BlogNavbar />
       <Center>
         <InputWrapper>
           <input
@@ -58,10 +60,7 @@ export default function SearchBlog() {
         )}
         {isLoading && <Spinner fullWidth={true} />}
         {!isLoading && blogPosts.length > 0 && (
-          <div className="">
-            <BlogPostBox {...blogPosts} />
-            {console.log(...blogPosts)}
-          </div>
+          <BlogPostsGrid blogPosts={blogPosts} />
         )}
       </Center>
     </>

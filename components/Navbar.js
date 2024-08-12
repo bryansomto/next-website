@@ -193,7 +193,7 @@ export const BlogNavbar = () => {
           ))}
         </StyledBlogNav>
         <SideIcons>
-          <Link href={"/search"}>
+          <Link href={"/blog/search"}>
             <SearchIcon />
           </Link>
         </SideIcons>

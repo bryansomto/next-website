@@ -29,6 +29,7 @@ const ImgBox = styled.div`
 `;
 
 export default function BlogPostBox({ _id, title, description, images }) {
+  // console.log(...blogPosts);
   return (
     <CardWrapper className="">
       <Card className="border border-primary" key={_id}>

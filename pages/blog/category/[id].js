@@ -92,7 +92,7 @@ export default function CategoryPage({
         params.set(f.name, f.value);
       }
     });
-    const url = `/api/blogPosts?` + params.toString();
+    const url = `/api/blogPostsClient?` + params.toString();
     axios.get(url).then((res) => {
       setBlogPosts(res.data);
       setLoadingBlogPosts(false);
@@ -107,24 +107,6 @@ export default function CategoryPage({
           <Title>{category.name}</Title>
 
           <FiltersWrapper mobileFiltersActive={mobileFiltersActive}>
-            {category.properties.map((prop) => (
-              <Filter key={prop.name}>
-                <span>{prop.name}:</span>
-                <select
-                  onChange={(ev) =>
-                    handleFilterChange(prop.name, ev.target.value)
-                  }
-                  value={filtersValues.find((f) => f.name === prop.name).value}
-                >
-                  <option value="all">All</option>
-                  {prop.values.map((val) => (
-                    <option key={val} value={val}>
-                      {val}
-                    </option>
-                  ))}
-                </select>
-              </Filter>
-            ))}
             <Filter>
               <span>Sort:</span>
               <select
@@ -144,7 +126,7 @@ export default function CategoryPage({
         {!loadingBlogPosts && (
           <div>
             {blogPosts.length > 0 && <BlogPostsGrid blogPosts={blogPosts} />}
-            {blogPosts.length === 0 && <div>Sorry, no products found</div>}
+            {blogPosts.length === 0 && <div>Sorry, no blog post found</div>}
           </div>
         )}
       </Center>

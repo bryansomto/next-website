@@ -76,7 +76,6 @@ export default function BlogPage({ blogPosts }) {
 export async function getServerSideProps(context) {
   await mongooseConnect();
   const { id } = context.query;
-  console.log(id);
   const blogPosts = await BlogPost.findById(id);
   return {
     props: {
