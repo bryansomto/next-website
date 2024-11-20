@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="pt-10 sm:pt-4">
           <Image src={Logo} alt="logo" className="w-14 h-14 lg:w-20 lg:h-20" />
         </div>
-        <div className="space-y-1">
+        <div className="space-y-4">
           <h3>Quick links</h3>
           {QuickLinks.map((i) => (
             <Link
