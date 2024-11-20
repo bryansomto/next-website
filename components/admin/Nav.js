@@ -97,6 +97,33 @@ export default function Nav({ show }) {
           Categories
         </Link>
         <Link
+          href={"/admin/carousel"}
+          className={
+            pathname.includes("/admin/carousel") ? activeLink : inactiveLink
+          }
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className={
+              pathname.includes("/admin/carousel") ? activeIcon : inactiveIcon
+            }
+          >
+            <path d="M22,26H10a2,2,0,0,1-2-2V8a2,2,0,0,1,2-2H22a2,2,0,0,1,2,2V24A2,2,0,0,1,22,26ZM10,8V24H22V8Z" />
+            <path d="M4,24H0V22H4V10H0V8H4a2,2,0,0,1,2,2V22A2,2,0,0,1,4,24Z" />
+            <path d="M32,24H28a2,2,0,0,1-2-2V10a2,2,0,0,1,2-2h4v2H28V22h4Z" />
+            <rect
+              id="_Transparent_Rectangle_"
+              data-name="&lt;Transparent Rectangle&gt;"
+              className="cls-1"
+            />
+          </svg>
+          Carousel
+        </Link>
+        <Link
           href={"/admin/settings"}
           className={
             pathname.includes("/admin/settings") ? activeLink : inactiveLink
@@ -130,13 +157,13 @@ export default function Nav({ show }) {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className={inactiveIcon}
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
             />
           </svg>

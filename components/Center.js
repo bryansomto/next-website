@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  margin: 16px auto;
+  gap: 40px;
+  margin: auto;
+  max-width: 95%;
+  justify-items: center;
+  align-items: center;
   @media (min-width: 768px) {
-    margin: 32px auto;
-    max-width: 80%;
+    max-width: 85%;
+    gap: 80px;
   }
   @media (min-width: 1024px) {
-    margin: 40px auto;
-    max-width: 60%;
+    max-width: 75%;
   }
 `;
 

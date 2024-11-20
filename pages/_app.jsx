@@ -1,9 +1,8 @@
 import "@/styles/globals.css";
 import { StyleSheetManager, createGlobalStyle } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
-import { SessionProvider } from "next-auth/react"
-import { bg1, bgMain } from "@/lib/colors";
-
+import { SessionProvider } from "next-auth/react";
+import { bg1, bgSecondary, onyx, snow } from "@/lib/colors";
 
 const GlobalStyles = createGlobalStyle`
     body{
@@ -12,13 +11,14 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat', Georgia, 'Times New Roman', Times, serif;
         font-weight: 430;
         font-size: .9em; // default font size
-        color: ${bg1};
-        background-color: ${bgMain};
+        /* color: ${snow}; */
+        /* background-color: ${snow}; */
     }
 `;
 
 export default function App({
-  Component, pageProps: { session, ...pageProps }
+  Component,
+  pageProps: { session, ...pageProps },
 }) {
   return (
     <SessionProvider session={session}>
@@ -27,8 +27,8 @@ export default function App({
         disableVendorPrefixes={false}
       >
         <GlobalStyles />
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </StyleSheetManager>
     </SessionProvider>
-  )
+  );
 }

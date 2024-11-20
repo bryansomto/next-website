@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-weight: 500;
+  font-family: "Exo";
+  text-transform: uppercase;
+  font-weight: 700;
   font-size: 1.3em;
   display: flex;
   margin: 10px 8px;

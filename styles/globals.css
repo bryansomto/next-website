@@ -12,63 +12,37 @@ h2 {
   @apply text-lg sm:text-xl lg:text-2xl capitalize;
 }
 h3 {
-  @apply text-sm text-primary capitalize;
+  @apply text-sm text-forest capitalize;
 }
-table.basic {
-  @apply w-full bg-white rounded-sm shadow-md;
-}
-table.basic thead tr td,
-table.basic thead tr th {
-  @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
-}
-table.basic tr td {
-  @apply px-4 py-1;
-}
-table.basic a {
-  @apply px-4 py-1 text-sm mx-1 rounded-sm inline-flex items-center gap-1;
-}
-.btn-red, .btn-default  {
-  @apply px-4 py-1 rounded-md shadow-sm;
-}
-.btn-red {
-  @apply bg-red-200 text-red-700 px-4 py-1 rounded-sm;
-}
-.btn-default {
-  @apply bg-gray-600 text-white px-4 py-1 rounded-sm;
-}
-.btn-primary {
-  @apply bg-bg1 text-black text-sm md:text-base px-2 md:px-3 py-2 rounded font-medium;
-}
-.btn-secondary {
-  @apply bg-bg2 text-black text-sm px-4 py-2 rounded-lg drop-shadow-md font-medium;
-}
-.btn-primaryVariant {
-  @apply bg-bg1 text-black text-xs px-2 rounded-full drop-shadow-md font-medium;
-}
-.btn-primary:hover {
-  @apply outline outline-offset-2 bg-white outline-button;
-}
-.btn-secondary:hover {
-  @apply outline outline-offset-2 bg-white outline-bg2;
-}
-input, textarea, select, option {
+input,
+textarea,
+select,
+option {
   @apply w-full bg-white text-black text-xs h-10 rounded-xl px-2;
 }
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   @apply border-blue-900;
 }
-select, option {
-  @apply text-secondary text-sm;
+select,
+option {
+  @apply text-sm;
 }
 label {
   @apply text-sm;
 }
-
-
-
-* {
-  /* border: 1px rgb(3, 3, 3) solid; */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
-
-
+* {
+  /* border: 1px greenyellow solid; */
+}

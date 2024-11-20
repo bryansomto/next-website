@@ -11,7 +11,13 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["bryan-next-website.s3.amazonaws.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "bryan-next-website.s3.amazonaws.com",
+        pathname: "**",
+      },
+    ],
   },
 };
 

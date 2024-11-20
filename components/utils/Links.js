@@ -7,13 +7,13 @@ import {
   whatsappLogo,
 } from "../../components/assets";
 
-export const inactiveNavLink = "capitalize hover:text-gray-200";
+export const inactiveNavLink =
+  "capitalize text-sm font-Exo hover:text-gray-200";
 export const activeNavLink = `${inactiveNavLink} text-primary underline`;
 export const inactiveBlogNavLink =
-  "capitalize text-xs sm:text-sm hover:text-gray-200";
+  "capitalize text-xs font-Exo hover:text-gray-200";
 export const activeBlogNavLink = `${inactiveBlogNavLink} underline`;
-export const inactiveLink =
-  "flex text-xs md:text-sm hover:text-gray-600 ml-2 capitalize";
+export const inactiveLink = "flex text-xs hover:text-gray-600 ml-2 capitalize";
 export const activeLink = `${inactiveLink} bg-highlight text-gray-400`;
 
 export const NavbarLinks = [
@@ -43,16 +43,20 @@ export const BlogNavbarLinks = [
 
 export const QuickLinks = [
   {
-    text: "Web Applications",
-    path: "/design/webdesigns",
+    text: "Web Pages & Applications",
+    path: "/more/673db1101ce275f20c420fd7",
   },
   {
-    text: "User Interfaces",
-    path: "/design/uidesigns",
+    text: "Logos",
+    path: "/more/673db1191ce275f20c420fd8",
   },
   {
-    text: "Brand Designs",
-    path: "/design/branddesigns",
+    text: "Flyers & Others",
+    path: "/more/673db1221ce275f20c420fd9",
+  },
+  {
+    text: "Portraits",
+    path: "/more/673db1cd1ce275f20c420fda",
   },
 ];
 

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Layout from "@/components/admin/Layout";
 import axios from "axios";
 import { withSwal } from "react-sweetalert2";
+import ButtonLink from "@/components/ButtonLink";
+import Button from "@/components/Button";
 
 function Categories({ swal }) {
   const [editedCategory, setEditedCategory] = useState(null);
@@ -137,13 +139,15 @@ function Categories({ swal }) {
         </div>
         <div className="mb-2">
           <label className="block">Properties</label>
-          <button
+          <Button
             onClick={addProperty}
-            type="button"
+            transparent={true}
+            outline={true}
+            small={true}
             className="btn-default text-sm mb-2"
           >
             Add new property
-          </button>
+          </Button>
           {properties.length > 0 &&
             properties.map((property, index) => (
               <div key={index} className="flex gap-1 mb-2">
@@ -190,9 +194,9 @@ function Categories({ swal }) {
               Cancel
             </button>
           )}
-          <button type="submit" className="btn-primary py-1">
+          <Button button={true} outline={true}>
             Save
-          </button>
+          </Button>
         </div>
       </form>
       {!editedCategory && (

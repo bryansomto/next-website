@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
 const Card = styled.div`
   height: 300px;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.2fr 0.8fr;
   @media screen and (min-width: 1024px) {
     height: 400px;
   }
@@ -35,17 +35,24 @@ const ImgBox = styled.div`
 
 export default function FeaturedPost({ blogPosts }) {
   return (
-    <CardWrapper>
+    <CardWrapper className="px-4">
       <RevealWrapper key={blogPosts._id} delay={1 * 50}>
         <Card className="border border-primary" key={blogPosts._id}>
           <ImgBox images={blogPosts.images?.[0]} />
-          <InfoBox className="py-2 sm:py-4">
-            <p className="flex">
-              <ButtonLink href={"/blog/" + blogPosts._id} link="true">
+          <ButtonLink className="p-0" href={"/blog/" + blogPosts._id}>
+            <InfoBox className="h-full flex flex-col p-4 gap-3">
+              <h4 className="flex font-Exo text-lg/7 md:text-xl/7 font-bold uppercase text-gray-700">
                 {blogPosts.title}
-              </ButtonLink>
-            </p>
-          </InfoBox>
+              </h4>
+              <p className="w-full h-40 text-xs whitespace-pre-line text-ellipsis overflow-hidden normal-case font-normal">
+                {blogPosts.description}
+              </p>
+
+              <p className="text-sm font-Exo text-primary font-bold capitalize">
+                See more &rarr;
+              </p>
+            </InfoBox>
+          </ButtonLink>
         </Card>
       </RevealWrapper>
     </CardWrapper>

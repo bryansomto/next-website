@@ -17,19 +17,11 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#038C39", //color on bgMain
-        secondary: "#FFFFFF", //color on dark bg
-        button: "#038C39", //buttons
-        bgMain: "#D6FFE6", //light green
-        bg1: "#060725", //darkblue
-        bg2: "#182128", //grey 30%
-        bg3: "#323A47", //grey 60%
-        bg4: "#EDF1F4", //white 80%
-      },
-      textColor: {
-        primary: "#038C39", //text on bgMain
-        bg1: "#060725", //darkblue - text on light bg
-        secondary: "#FFFFFF", //text on dark bg
+        forest: "#4CBB17", //forest green
+        kelly: "#4CBB17", //kelly green
+        snow: "#FFFFFA", //white - for background
+        onyx: "#050206", //black shade - text & bg
+        jet: "#040404", //black shade - text & bg
       },
       width: {
         215: "215px",
@@ -41,7 +33,23 @@ module.exports = {
         300: "300px",
         360: "360px",
       },
-      fontFamily: {},
+      fontFamily: {
+        Exo: ["Exo", "sans-serif"],
+        Cedarville: ["Cedarville Cursive", "cursive"],
+      },
+      fontWeight: {
+        thin: "100",
+        hairline: "100",
+        extralight: "200",
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        "extra-bold": "800",
+        black: "900",
+      },
     },
   },
   plugins: [],

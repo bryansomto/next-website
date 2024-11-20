@@ -10,9 +10,8 @@ import { BlogPost } from "@/models/BlogPost";
 import styled from "styled-components";
 
 const ColWrapper = styled.div`
-  margin-top: 20px;
   position: relative;
-  padding: 60px 0;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -23,16 +22,13 @@ const ColWrapper = styled.div`
     white-space: pre-line;
   }
   @media (min-width: 768px) {
-    padding: 120px 0;
+    padding: 70px 0;
     p {
       font-size: 1.1em;
     }
   }
   @media (min-width: 1024px) {
-    padding: 180px 0;
-    p {
-      font-size: 1.2em;
-    }
+    padding: 100px 0;
   }
 `;
 
@@ -42,13 +38,13 @@ const TextBG = styled.div`
 
 export default function BlogPage({ blogPosts }) {
   return (
-    <>
+    <div className="bg-secondary">
       <Navbar />
       <BlogNavbar />
       <Cover background={blogPosts?.images[0]}></Cover>
       <TextBG>
         <Center>
-          <Title>{blogPosts?.title}</Title>
+          <Title className="mt-3 lg:mt-8">{blogPosts?.title}</Title>
           <ColWrapper>
             <div className="flex justify-center">
               <iframe
@@ -69,7 +65,7 @@ export default function BlogPage({ blogPosts }) {
         </Center>
       </TextBG>
       <Footer />
-    </>
+    </div>
   );
 }
 

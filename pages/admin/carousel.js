@@ -4,11 +4,11 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function BlogPosts(children) {
-  const [blogPosts, setBlogPosts] = useState([]);
+export default function Carousel(children) {
+  const [carouselForm, setCarouselForm] = useState([]);
   useEffect(() => {
-    axios.get("/api/blogPosts").then((response) => {
-      setBlogPosts(response.data);
+    axios.get("/api/carouselForm").then((response) => {
+      setCarouselForm(response.data);
     });
   }, []);
   return (
@@ -16,9 +16,9 @@ export default function BlogPosts(children) {
       <ButtonLink
         transparent={true}
         outline={true}
-        href={"/admin/blogPosts/new"}
+        href={"/admin/carousel/new"}
       >
-        Add new blogposts
+        Add new Carousel
       </ButtonLink>
       <table className="basic mt-2">
         <thead>
@@ -28,13 +28,13 @@ export default function BlogPosts(children) {
           </tr>
         </thead>
         <tbody>
-          {blogPosts.map((blogPost) => (
-            <tr key={blogPost._id}>
-              <td className="text-surfaceBG">{blogPost.title}</td>
+          {carouselForm.map((carousel) => (
+            <tr key={carousel._id}>
+              <td className="text-surfaceBG">{carousel.title}</td>
               <td>
                 <Link
                   className="btn-default"
-                  href={`/admin/blogPosts/edit/${blogPost._id}`}
+                  href={`/admin/carousel/edit/${carousel._id}`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default function BlogPosts(children) {
                 </Link>
                 <Link
                   className="btn-red"
-                  href={`/admin/blogPosts/delete/${blogPost._id}`}
+                  href={`/admin/carousel/delete/${carousel._id}`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

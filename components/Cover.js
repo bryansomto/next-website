@@ -13,10 +13,10 @@ const StyledDiv = styled.div`
   opacity: 0.4;
   padding: 40px 0;
   @media (min-width: 768px) {
-    padding: 70px 0;
+    padding: 60px 0;
   }
   @media (min-width: 1024px) {
-    padding: 100px 0;
+    padding: 80px 0;
   }
 `;
 

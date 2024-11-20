@@ -1,43 +1,72 @@
-import {
-  bg2,
-  bg4,
-  primary,
-  secondary,
-  button,
-  bgMain,
-  bg1,
-} from "@/lib/colors";
+import { forest, jet, kelly, onyx, snow } from "@/lib/colors";
 import styled, { css } from "styled-components";
 
 export const ButtonStyle = css`
   border: 0;
+  border-radius: 10px;
   margin-top: 2px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   @media (min-width: 768px) {
     padding: 5px 15px;
   }
   text-transform: uppercase;
-  border-radius: 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 300;
   svg {
     height: 16px;
     margin-right: 5px;
   }
   ${(props) =>
+    props.welcome &&
+    css`
+      padding: 10px 20px;
+      background-color: ${forest};
+      color: ${snow};
+      border: 1px solid transparent;
+      border-radius: 0;
+      font-size: 0.9rem;
+      &:hover {
+        border: 1px solid ${snow};
+        background-color: transparent;
+        transition: 0.3s;
+      }
+      @media (min-width: 768px) {
+        padding: 10px 30px;
+      }
+    `}
+  ${(props) =>
+    props.black &&
+    css`
+      padding: 9px 18px;
+      background-color: ${onyx};
+      color: ${snow};
+      border: 1px solid transparent;
+      border-radius: 0;
+      font-size: 0.8rem;
+      &:hover {
+        border: 1px solid ${onyx};
+        background-color: transparent;
+        color: ${onyx};
+        transition: 0.3s;
+      }
+      @media (min-width: 768px) {
+        padding: 10px 30px;
+      }
+    `}
+  ${(props) =>
     props.transparent &&
     props.outline &&
     css`
       background-color: transparent;
-      color: ${primary};
-      border: 2px solid ${primary};
+      color: ${forest};
+      border: 2px solid ${forest};
       &:hover {
-        background-color: ${primary};
-        color: ${secondary};
-        outline: 2px solid ${primary};
+        background-color: ${forest};
+        color: ${snow};
+        outline: 2px solid ${forest};
         outline-offset: 2px;
       }
     `}
@@ -45,36 +74,14 @@ export const ButtonStyle = css`
     props.button &&
     props.outline &&
     css`
-      background-color: ${button};
-      border: 1px solid ${button};
-      color: ${secondary};
+      background-color: ${forest};
+      border: 1px solid transparent;
+      color: ${snow};
       &:hover {
         background-color: transparent;
-        color: ${button};
-        outline: 2px solid ${button};
-        outline-offset: 1px;
-      }
-    `}
-    ${(props) =>
-    props.welcome &&
-    css`
-      font-size: 0.8rem;
-      border: 1px solid ${primary};
-      &:hover {
-        outline: 2px solid ${primary};
-        outline-offset: 2px;
-      }
-      @media (min-width: 768px) {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-        border: 3px solid ${primary};
-        &:hover {
-          outline: 3px solid ${primary};
-          outline-offset: 2px;
-        }
-      }
-      @media (min-width: 1024px) {
-        font-size: 1.1rem;
+        color: ${snow};
+        border: 1px solid ${snow};
+        transition: 0.3s;
       }
     `}
     ${(props) =>
@@ -84,9 +91,11 @@ export const ButtonStyle = css`
       font-weight: 400;
       @media (min-width: 768px) {
         font-size: small;
-        outline: 0px solid ${primary};
+        outline: 0px solid ${forest};
       }
     `}
+   
+    
     ${(props) =>
     props.share &&
     css`
@@ -95,7 +104,7 @@ export const ButtonStyle = css`
       border-radius: 50px;
       @media (min-width: 1024px) {
         font-size: medium;
-        outline: 0px solid ${primary};
+        outline: 0px solid ${forest};
       }
     `}
     ${(props) =>
